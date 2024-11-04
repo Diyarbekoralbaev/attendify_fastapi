@@ -2,7 +2,7 @@ from fastapi import FastAPI, WebSocket, WebSocketDisconnect
 from fastapi.middleware.cors import CORSMiddleware  # Import CORSMiddleware
 from fastapi.staticfiles import StaticFiles
 
-from routes import employee_router, attendance_router, client_router, department_router, report_router, working_graphic_router
+from routes import employee_router, attendance_router, client_router, department_router, report_router, working_graphic_router, image_handle_router
 from init_db import init_db
 from manager import manager
 
@@ -33,6 +33,7 @@ app.include_router(client_router, prefix="/client")
 app.include_router(department_router, prefix="/department")
 app.include_router(report_router, prefix="/report")
 app.include_router(working_graphic_router, prefix="/working-graphic")
+app.include_router(image_handle_router, prefix="/image")
 
 # Initialize the database on startup
 @app.on_event('startup')
