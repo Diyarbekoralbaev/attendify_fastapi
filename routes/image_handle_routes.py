@@ -7,7 +7,7 @@ image_handle_router = APIRouter(
     tags=['image_handle']
 )
 
-upload_folder = Path('/home/ttc-user/attendify_ai/images/test_camera')
+upload_folder = Path('test_camera')
 upload_folder.mkdir(parents=True, exist_ok=True)
 
 
